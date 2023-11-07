@@ -1,4 +1,4 @@
-#!/urs/bin/python3
+#!/usr/bin/python3
 """
 Contains the class BaseGeometry and subclass Rectangle
 """
@@ -15,7 +15,7 @@ class BaseGeometry:
         if type(value) is not int:
             raise TypeError("{:s} must be an integer".format(name))
         if value <= 0:
-            raise ValueEror("{:s} must be greater than 0".format(name))
+            raise ValueError("{:s} must be greater than 0".format(name))
 
 
 class Rectangle(BaseGeometry):
@@ -29,10 +29,10 @@ class Rectangle(BaseGeometry):
 
     def area(self):
         """returns the area of the rectangle"""
-        return self.__width *self.__height
+        return self.__width * self.__height
 
     def __str__(self):
-        """informal string representation of the square"""
+        """informal string representation of the rectangle"""
         return "[Rectangle] {:d}/{:d}".format(self.__width, self.__height)
 
 
@@ -45,9 +45,9 @@ class Square(Rectangle):
         super().__init__(size, size)
 
     def area(self):
-        """returns the area of the square"""
+        """"returns the area of the square"""
         return self.__size ** 2
 
     def __str__(self):
-        """informal string representation of the square"""
+        """informal string reepresentation of the square"""
         return "[Square] {:d}/{:d}".format(self.__size, self.__size)
